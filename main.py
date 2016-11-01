@@ -6,6 +6,8 @@ app = Flask(__name__)
 def get_cat(error):
     cat = requests.get('https://http.cat/%s' % error)
     print error
+    # use template and make redirects with js
+    # download images and serve cached
     if cat:
         response = make_response(cat.content)
         response.headers['Content-Type'] = 'image/jpeg'
